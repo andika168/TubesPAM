@@ -9,13 +9,9 @@ import { CATEGORIES } from '../data/dummy-data';
 
 
 
-<<<<<<< HEAD
 
 
 const KatergoriScreen = props =>{
-=======
-const KatergoriScreen = (props) =>{
->>>>>>> 71d66995a17b6ecb1a6fa0314306a8a4a7d7c3ad
 
     const renderGridItem = (ItemData)=>{
         
