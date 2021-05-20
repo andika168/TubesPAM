@@ -9,7 +9,7 @@ import { CATEGORIES } from '../data/dummy-data';
 
 
 
-const KatergoriScreen = props =>{
+const KatergoriScreen = (props) =>{
 
     const renderGridItem = (ItemData)=>{
         console.log(ItemData)
@@ -19,7 +19,7 @@ const KatergoriScreen = props =>{
         onSelect={()=>{
             console.log('tes')
         }}
-        image={ItemData.item.urlImage}
+        image={ItemData.item.UrlImage}
         />
         )
     }
