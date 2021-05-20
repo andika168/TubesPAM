@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 
 import { createDrawerNavigator,DrawerItemList } from "@react-navigation/drawer";
-import { Fontisto,Feather, MaterialIcons  } from "@expo/vector-icons";
+import { Fontisto,Feather, MaterialIcons,Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {SafeAreaView, Button, View,Platform } from "react-native";
 
@@ -11,6 +11,12 @@ import LoginScreen from '../screen/LoginScreen'
 import SignUpScreen from '../screen/SignUpScreen'
 import KatergoriScreen, {KategoriScreenOption} from '../screen/KategoriScreen'
 import Color from '../constant/Color';
+import FavoriteScreen,{FavoriteScreenOption} from '../screen/FavoriteScreen';
+import FilterScreen from '../screen/FilterScreen';
+import ProfileScreen from '../screen/ProfileScreen';
+import MealsDetailScreen from '../screen/MealsDetailScreen';
+
+
 
 
 
@@ -32,16 +38,21 @@ const Navigation = () =>{
             <Stack.Screen
             name="KategoriScreen" component={KatergoriScreen} options={KategoriScreenOption}
             />
+           <Stack.Screen
+            name="MealsDetailScreen"
+            component={MealsDetailScreen}
+          /> 
         </Stack.Navigator>
     )
 }
 
-//stack
 const ProfileStack = createStackNavigator()
 const ProfileNavigation = () =>{
     return(
       <ProfileStack.Navigator>
-          <ProfileStack.Screen name="Profiles" component={ProfileScreen} options={ProfileScreenOption} />
+          <ProfileStack.Screen name="Profiles" component={ProfileScreen} 
+          //options={ProfileScreenOption} 
+          />
       </ProfileStack.Navigator>
     )
 }
@@ -50,7 +61,9 @@ const FilterStack = createStackNavigator();
 const filterNavigations = () => {
   return (
     <FilterStack.Navigator>
-      <FilterStack.Screen name="FilterStack" component={FilterScreen} options={FilterScreenOption} />
+      <FilterStack.Screen name="FilterStack" component={FilterScreen} 
+      //options={FilterScreenOption} 
+      />
     </FilterStack.Navigator>
   );
 };
@@ -59,16 +72,16 @@ const StackFavotites = createStackNavigator();
 const FavNavigator = () => {
   return (
     <StackFavotites.Navigator>
-      <StackFavotites.Screen name="FavoriteScreen" component={FavoriteScreen} options={FavoriteScreenOption} />
+      <StackFavotites.Screen name="FavoriteScreen" component={FavoriteScreen} 
+      options={FavoriteScreenOption} 
+      />
       <StackFavotites.Screen
-        name="MealDetailScreen"
+        name="MealsDetailScreen"
         component={MealsDetailScreen}
       />
     </StackFavotites.Navigator>
   );
 };
-//end stack
-
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
@@ -92,7 +105,7 @@ const TabNavigator = () => {
           },
         }}
       />
-      {/* <Tab.Screen
+      { <Tab.Screen
         name="Food Favorite"
         component={FavNavigator}
         options={{
@@ -102,11 +115,10 @@ const TabNavigator = () => {
             );
           },
         }}
-      /> */}
+      /> }
     </Tab.Navigator>
   );
 };
-
 
 const Drawer = createDrawerNavigator();
 const MainNavigator = () => {
@@ -134,18 +146,21 @@ const MainNavigator = () => {
             <MaterialIcons name="category" size={22} color={props.color} />
           ),
         }}/>
-        
-        <Drawer.Screen name="Filter" component={filterNavigations} options={{
+      <Drawer.Screen name="Filter" component={filterNavigations} options={{
           drawerIcon: (props) => (
-            <Fontisto name="filter" size={20} color={props.color} />
+            <Ionicons
+              name={Platform.OS === "android" ? "md-color-filter" : "ios-color-filter"}
+              size={23}
+              color={props.color}
+            />
           ),
         }}/>
         <Drawer.Screen name="Profile" component={ProfileNavigation}  options={{
           drawerIcon: (props) => (
-            <Feather name="user-check" size={22}  color={props.color} />
+            <Feather name="user-check" size={23}  color={props.color} />
           ),
         }}/>
-        
+
       </Drawer.Navigator>
   );
 };
