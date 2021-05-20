@@ -12,9 +12,9 @@ import SignUpScreen from '../screen/SignUpScreen'
 import KatergoriScreen, {KategoriScreenOption} from '../screen/KategoriScreen'
 import Color from '../constant/Color';
 import FavoriteScreen,{FavoriteScreenOption} from '../screen/FavoriteScreen';
-import FilterScreen from '../screen/FilterScreen';
-import ProfileScreen from '../screen/ProfileScreen';
-import MealsDetailScreen from '../screen/MealsDetailScreen';
+import FilterScreen, {FilterScreenOption} from '../screen/FilterScreen';
+import ProfileScreen, {ProfileScreenOption} from '../screen/ProfileScreen';
+import MealsDetailScreen, {MealsDetailOption} from '../screen/MealsDetailScreen';
 
 
 
@@ -41,6 +41,7 @@ const Navigation = () =>{
            <Stack.Screen
             name="MealsDetailScreen"
             component={MealsDetailScreen}
+            options={MealsDetailOption}
           /> 
         </Stack.Navigator>
     )
@@ -51,7 +52,7 @@ const ProfileNavigation = () =>{
     return(
       <ProfileStack.Navigator>
           <ProfileStack.Screen name="Profiles" component={ProfileScreen} 
-          //options={ProfileScreenOption} 
+          options={ProfileScreenOption} 
           />
       </ProfileStack.Navigator>
     )
@@ -62,24 +63,24 @@ const filterNavigations = () => {
   return (
     <FilterStack.Navigator>
       <FilterStack.Screen name="FilterStack" component={FilterScreen} 
-      //options={FilterScreenOption} 
+      options={FilterScreenOption} 
       />
     </FilterStack.Navigator>
   );
 };
 
-const StackFavotites = createStackNavigator();
+const StackFavorites = createStackNavigator();
 const FavNavigator = () => {
   return (
-    <StackFavotites.Navigator>
-      <StackFavotites.Screen name="FavoriteScreen" component={FavoriteScreen} 
+    <StackFavorites.Navigator>
+      <StackFavorites.Screen name="FavoriteScreen" component={FavoriteScreen} 
       options={FavoriteScreenOption} 
       />
-      <StackFavotites.Screen
+      <StackFavorites.Screen
         name="MealsDetailScreen"
         component={MealsDetailScreen}
       />
-    </StackFavotites.Navigator>
+    </StackFavorites.Navigator>
   );
 };
 

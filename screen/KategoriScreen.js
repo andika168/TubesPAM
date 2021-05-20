@@ -9,17 +9,19 @@ import { CATEGORIES } from '../data/dummy-data';
 
 
 
+
+
 const KatergoriScreen = props =>{
 
     const renderGridItem = (ItemData)=>{
-        console.log(ItemData)
-       return (
-        <CategoriGridTile
+        
+    return (
+     <CategoriGridTile
         title={ItemData.item.title}
         onSelect={()=>{
-            console.log('tes')
+            props.navigation.navigate('MealsDetailScreen')
         }}
-        image={ItemData.item.urlImage}
+        image={ItemData.item.UrlImage}
         />
         )
     }
