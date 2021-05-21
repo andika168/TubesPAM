@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect, useCallback} from 'react'
 import { View, Text, Platform, FlatList } from 'react-native'
 import HeaderButton from '../component/HeaderButton'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
@@ -6,16 +6,19 @@ import Color from '../constant/Color';
 import {DrawerActions} from '@react-navigation/native'
 import CategoriGridTile from '../component/CategoriGridTitle';
 import { CATEGORIES } from '../data/dummy-data';
+import {useDispatch, useSelector} from 'react-redux'
+import * as categoriAction from '../store/action/categori'
 
-
-
-<<<<<<< HEAD
-
-
-const KatergoriScreen = props =>{
-=======
 const KatergoriScreen = (props) =>{
->>>>>>> 71d66995a17b6ecb1a6fa0314306a8a4a7d7c3ad
+    const dispatch = useDispatch ()
+    const loadCategori = useCallback(async ()=>{
+        dispatch (categoriAction.fetchCategori())
+    },[dispatch])
+
+    useEffect (()=>{
+        loadCategori()
+    },[loadCategori])
+
 
     const renderGridItem = (ItemData)=>{
         
@@ -23,7 +26,10 @@ const KatergoriScreen = (props) =>{
      <CategoriGridTile
         title={ItemData.item.title}
         onSelect={()=>{
-            props.navigation.navigate('MealsDetailScreen')
+            props.navigation.navigate("MealsDetailScreen" ,{
+                categoriId:ItemData.item.id
+            })
+            
         }}
         image={ItemData.item.UrlImage}
         />

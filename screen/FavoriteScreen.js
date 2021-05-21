@@ -1,12 +1,29 @@
 import React from 'react'
-import {View, Text, Platform} from 'react-native'
+import {View, Text, Platform, FlatList, StyleSheet} from 'react-native'
+import MealsDetailComponents from '../component/MealsDetailComponent'
 import Color from '../constant/Color'
+import { CATEGORIES, FAVORITE } from '../data/dummy-data'
 
 const FavoriteScreen = (props) =>{
+    const favorite = FAVORITE.map((pl) => CATEGORIES.filter((cat) => cat.id === pl.id_categori))
+
     return(
-        <View>
-            <Text>Ini adalah Favorite Screen</Text>
-        </View>
+        <FlatList
+        data={favorite}
+        keyExtractor={(item) => item[0].id}
+        renderItem={(itemData)=>(
+            <MealsDetailComponents
+                image={itemData.item[0].UrlImage}
+                title={itemData.item[0].title}
+                onSelect={()=>{
+                    props.navigation.navigate('MealsDetailScreen',{
+                        categoriId:itemData.item[0].id
+                    })
+                       
+                }}
+            />
+        )}
+        />
     )
 }
 
