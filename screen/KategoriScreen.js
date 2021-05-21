@@ -14,11 +14,10 @@ const KatergoriScreen = (props) =>{
     const loadCategori = useCallback(async ()=>{
         dispatch (categoriAction.fetchCategori())
     },[dispatch])
-
+    
     useEffect (()=>{
         loadCategori()
     },[loadCategori])
-
 
     const renderGridItem = (ItemData)=>{
         
