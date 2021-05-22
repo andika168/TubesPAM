@@ -11,10 +11,11 @@ import * as categoriAction from '../store/action/categori'
 
 const KatergoriScreen = (props) =>{
     const dispatch = useDispatch ()
+    const categori = useSelector((state)=>state.categori.categori)
     const loadCategori = useCallback(async ()=>{
         dispatch (categoriAction.fetchCategori())
     },[dispatch])
-    
+
     useEffect (()=>{
         loadCategori()
     },[loadCategori])
@@ -38,7 +39,7 @@ const KatergoriScreen = (props) =>{
     return (
         <FlatList
         numColumns={2}
-        data={CATEGORIES}
+        data={!categori ? CATEGORIES : categori}
         renderItem={renderGridItem}
         keyExtractor={(item,index) => item.id}
         />

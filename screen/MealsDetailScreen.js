@@ -6,8 +6,8 @@ import {DrawerActions} from '@react-navigation/native'
 import Color from '../constant/Color'
 import { CATEGORIES, RECEP } from '../data/dummy-data'
 import DefaultText from '../component/DefaultText'
-
-
+import{useSelector, useDispatch} from 'react-redux'
+import * as favoriteAction from '../store/action/favorites'
 
 const ListItem = (props) =>{
   return(
@@ -17,17 +17,22 @@ const ListItem = (props) =>{
   )
 }
 
-
 const MealsDetailScreen = (props) =>{
+  const dispatch = useDispatch ()
    const catid = props.route.params?.categoriId?? null
-   const category = CATEGORIES.find((cat)=>cat.id === catid)
-   const recep = RECEP.filter((rec)=>rec.categoryId === category.id)
+   const category = useSelector(state=>state.categori.categori.find(cat=>cat.id===catid))
+   //CATEGORIES.find((cat)=>cat.id === catid)
+   const recep = useSelector(state=>state.recep.recep.filter(rec =>rec.categoryId === category.id))
+   //RECEP.filter((rec)=>rec.categoryId === category.id)
    const merge = [...recep,category]
    const [UrlImage, setUrlImage] = useState("")
    const [isFavorite, setIsFavorite] = useState (false)
+   //const tes = useSelector(state=>state.recep.recep)
    const toogleFavoriteHandle = useCallback(()=>{
         setIsFavorite((prevState)=> !prevState)
+        dispatch(favoriteAction.toogleFavorites(catid))
    },[isFavorite])
+   
 
   useEffect(()=>{
     if(merge[1]){

@@ -3,10 +3,14 @@ import {View, Text, Platform, FlatList, StyleSheet} from 'react-native'
 import MealsDetailComponents from '../component/MealsDetailComponent'
 import Color from '../constant/Color'
 import { CATEGORIES, FAVORITE } from '../data/dummy-data'
+import {useSelector} from 'react-redux'
 
 const FavoriteScreen = (props) =>{
-    const favorite = FAVORITE.map((pl) => CATEGORIES.filter((cat) => cat.id === pl.id_categori))
-
+    const fav = useSelector(state => state.favorites.favoriteMeals) 
+    const categori = useSelector(state => state.categori.categori)
+    const favorite = fav.map(pl => categori.filter(cat => cat.id === pl.id_categori))
+    //FAVORITE.map((pl) => CATEGORIES.filter((cat) => cat.id === pl.id_categori))
+    //const state = useSelector(state => state.favorites.favoriteMeals)
     return(
         <FlatList
         data={favorite}

@@ -1,4 +1,4 @@
-import { exp } from "react-native-reanimated"
+import { SHOW_CATEGORI } from "../action/categori"
 
 const initialState ={
     categori: []
@@ -6,8 +6,10 @@ const initialState ={
 
 const categoriReducer = (state = initialState, action) =>{
     switch (action.type){
-        case "TES":
-            return state
+        case SHOW_CATEGORI:
+            return {
+                ...state,categori:action.data
+            }
         default:
             return state
     }
