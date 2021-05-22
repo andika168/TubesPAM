@@ -4,6 +4,9 @@ import Input from "../component/Input"
 import Submit from "../component/Submit"
 
 const SignUp = (props) => {
+
+  
+
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
       <View style={styles.container}>
@@ -16,15 +19,34 @@ const SignUp = (props) => {
         <Text style={styles.textBody}>
           Create an account to get all features
         </Text>
-        <Input name="Full Name" icon="user" />
-        <Input name="Email" icon="envelope" />
-        <Input name="Phone" icon="phone" />
-        <Input name="Password" icon="lock" pass={true} />
-        <Input name="Confirm Password" icon="lock" pass={true} />
+        <Input 
+          name="Name" 
+          icon="user" 
+          onChangeText={Name=>this.setState({Name})}
+        />
+        <Input 
+          name="Email" 
+          icon="envelope" 
+        />
+        <Input 
+          name="Phone" 
+          icon="phone" 
+        />
+        <Input 
+          name="Password" 
+          icon="lock"
+          pass={true} 
+        />
+        <Input 
+          name="Confirm Password" 
+          icon="lock" 
+          pass={true} 
+        />
         <Submit
           color="#0251ce"
           title="CREATE"
           clidked={() => {
+          
             props.navigation.navigate("KategoriScreen");
           }}
         />
