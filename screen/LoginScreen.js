@@ -23,11 +23,11 @@ const LoginScreen = props =>{
         <ScrollView style={{ backgroundColor: "white" }}>
           <View style={styles.container}>
             <Image
-              source={require("../assets/login.png")}
+              source={require("../assets/koki.png")}
               resizeMode="center"
               style={styles.image}
             />
-            <Text style={styles.textTitle}>Selamat Datang</Text>
+            <Text style={styles.textTitle}>Selamat Datang Di Resep-I</Text>
             <Text style={styles.textBody}>Masuk ke akun yang sudah ada</Text>
             <View style={{ marginTop: 20 }} />
             <Inputs 

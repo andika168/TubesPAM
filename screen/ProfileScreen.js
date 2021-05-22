@@ -36,10 +36,10 @@ const ProfileScreen = (props) => {
     
             <View style={styles.infoContainer}>
               <Text style={[styles.text, { fontWeight: "200", fontSize: 30 }]}>
-                Teh Pucuk
+                User119899
               </Text>
               <Text style={[styles.text, { color: "#AEB5BC", fontSize: 14 }]}>
-                Developer
+                Mahasiswa
               </Text>
             </View>
     
@@ -54,7 +54,7 @@ const ProfileScreen = (props) => {
                   },
                 ]}
               >
-                <Text style={[styles.text, { fontSize: 24 }]}>1</Text>
+                <Text style={[styles.text, { fontSize: 24 }]}></Text>
                 <Text style={[styles.text, styles.subText]}>Makanan Favorit</Text>
               </View>
             </View>
