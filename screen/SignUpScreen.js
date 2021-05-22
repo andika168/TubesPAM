@@ -15,9 +15,9 @@ const SignUp = (props) => {
           resizeMode="center"
           style={styles.image}
         />
-        <Text style={styles.textTitle}>Let's Get Started</Text>
+        <Text style={styles.textTitle}>Ayo Mulai</Text>
         <Text style={styles.textBody}>
-          Create an account to get all features
+          Buat akun untuk mendapatkan semua fitur
         </Text>
         <Input 
           name="Name" 
@@ -51,12 +51,12 @@ const SignUp = (props) => {
           }}
         />
         <View style={{ flexDirection: "row" }}>
-          <Text style={styles.textBody}>Already have an account? </Text>
+          <Text style={styles.textBody}>Sudah punya akun? </Text>
           <Text
             style={[styles.textBody, { color: "blue" }]}
             onPress={() => props.navigation.navigate("LoginScreen")}
           >
-            Login here
+            Masuk disini
           </Text>
         </View>
       </View>

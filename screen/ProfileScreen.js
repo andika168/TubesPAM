@@ -54,7 +54,7 @@ const ProfileScreen = (props) => {
                   },
                 ]}
               >
-                <Text style={[styles.text, { fontSize: 24 }]}>45,844</Text>
+                <Text style={[styles.text, { fontSize: 24 }]}>1</Text>
                 <Text style={[styles.text, styles.subText]}>Makanan Favorit</Text>
               </View>
             </View>
