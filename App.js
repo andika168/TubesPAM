@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ActivityIndicator,StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font'
 import {AppLoading} from 'expo'
 import {enableScreens} from 'react-native-screens'
@@ -20,12 +20,16 @@ const store = createStore(rootReducer,applyMiddleware(ReduxThunk))
 
 enableScreens()
 export default function App() {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [userToken, setUserToken] = React.useState(null);
   return( 
     <Provider store = {store}>
       <Navigation/>
     </Provider>
   )
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
