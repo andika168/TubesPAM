@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
 
 export const MealsDetailOption = (navData) =>{
     return {
-        headerTitle: "Food Recipes",
+        headerTitle: "Resep Makanan",
         headerStyle: { 
             backgroundColor: Platform.OS === "android" ? Color.primaryColor: "",
         },
