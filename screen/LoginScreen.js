@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {View,Text,ScrollView,Image,StyleSheet} from 'react-native'
 import Inputs from '../component/Input';
 import Submit from '../component/Submit';
@@ -15,8 +15,15 @@ const LoginScreen = props =>{
             <Text style={styles.textTitle}>Selamat Datang</Text>
             <Text style={styles.textBody}>Masuk ke akun yang sudah ada</Text>
             <View style={{ marginTop: 20 }} />
-            <Inputs name="Email" icon="user" />
-            <Inputs name="Password" icon="lock" pass={true} />
+            <Inputs 
+              name="Email" 
+              icon="user" 
+            />
+            <Inputs 
+              name="Password" 
+              icon="lock" 
+              pass={true} 
+            />
             <Submit
               title="LOG IN"
               color="#0148a4"
