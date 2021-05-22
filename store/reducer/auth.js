@@ -8,7 +8,7 @@ const initialState = {
     }
 }
 
-export default authReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOGIN:
             const { email, nama, no_telepon } = action.data;
@@ -20,4 +20,7 @@ export default authReducer = (state = initialState, action) => {
         default:
             break;
     }
+    return state
 }
+
+export default authReducer

@@ -9,11 +9,12 @@ import Navigation from './Navigasi/NavugasiApp';
 import categoriReducer from './store/reducer/categori';
 import recepReducer from './store/reducer/recep';
 import favoriteReducer from './store/reducer/favorites';
+import authReducer from './store/reducer/auth';
+
 //redux
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import ReduxThunk from 'redux-thunk'
-
 
 
 
