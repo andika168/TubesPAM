@@ -74,11 +74,11 @@ const MealsDetailScreen = (props) =>{
           <DefaultText>{merge[0].duration}m</DefaultText>
           <DefaultText>{merge[0].complexity.toUpperCase()}</DefaultText>
         </View>
-        <Text style={styles.title}>Ingredients</Text>
+        <Text style={styles.title}>Bahan</Text>
         {merge[0].ingredients.map((ingredients) => (
           <ListItem key={ingredients}>{ingredients}</ListItem>
         ))}
-        <Text style={styles.title}>Step</Text>
+        <Text style={styles.title}>Langkah</Text>
         {merge[0].steps.map((step) => (
           <ListItem key={step}>{step}</ListItem>
         ))}
