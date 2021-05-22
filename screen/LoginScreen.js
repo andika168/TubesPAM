@@ -1,9 +1,24 @@
 import React, {useState} from 'react'
 import {View,Text,ScrollView,Image,StyleSheet} from 'react-native'
+import { useDispatch, useSelector } from 'react-redux';
 import Inputs from '../component/Input';
 import Submit from '../component/Submit';
+import { loginActions} from '../store/action/auth';
 
 const LoginScreen = props =>{
+  const { email, nama, no_telepon } = useSelector(state => state.auth.users);
+  const dispatch = useDispatch();
+  const [inputEmail, setInputEmail] = useState('');
+  const [inputPassword, setInputPassword] = useState('');
+  useEffect(() => {
+    if (email !== '') {
+      props.navigation.navigate('KategoriScreen');
+    }
+  }, [email]);
+
+  const submitHandler = () => {
+    dispatch(loginActions(inputEmail, inputPassword));
+  }
     return (
         <ScrollView style={{ backgroundColor: "white" }}>
           <View style={styles.container}>

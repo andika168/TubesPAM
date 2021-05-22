@@ -18,6 +18,7 @@ import ReduxThunk from 'redux-thunk'
 
 
 const rootReducer = combineReducers ({
+  auth: authReducer,
   categori: categoriReducer,
   recep: recepReducer,
   favorites: favoriteReducer
