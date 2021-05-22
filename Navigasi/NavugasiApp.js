@@ -96,18 +96,18 @@ const TabNavigator = () => {
       }}
     >
       <Tab.Screen
-        name="Category"
+        name="Kategori"
         component={MainNavigator}
         options={{
           tabBarIcon: (tabInfo) => {
             return (
-                <MaterialIcons name="category" size={24} color="black" />
+                <MaterialIcons name="category" size={24} color={Color.primaryColor} />
             );
           },
         }}
       />
       { <Tab.Screen
-        name="Food Favorite"
+        name="Favorit"
         component={FavNavigator}
         options={{
           tabBarIcon: (tabInfo) => {

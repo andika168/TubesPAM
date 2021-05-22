@@ -48,7 +48,7 @@ const KatergoriScreen = (props) =>{
 
 export const KategoriScreenOption = (navData) =>{
     return {
-        headerTitle:"Category",
+        headerTitle:"Kategori",
         headerStyle: {
             backgroundColor: Platform.OS === "android" ? Color.primaryColor:"",
         },

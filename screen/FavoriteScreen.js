@@ -33,7 +33,7 @@ const FavoriteScreen = (props) =>{
 
 export const FavoriteScreenOption = (navData) =>{
     return {
-        headerTitle: "Favorite Screen",
+        headerTitle: "Favorit",
         headerStyle: { 
             backgroundColor: Platform.OS === "android" ? Color.primaryColor: "",
         },

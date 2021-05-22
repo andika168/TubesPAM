@@ -27,7 +27,7 @@ const LoginScreen = props =>{
               resizeMode="center"
               style={styles.image}
             />
-            <Text style={styles.textTitle}>Selamat Datang Di Resep-I</Text>
+            <Text style={styles.textTitle}>Resep-I</Text>
             <Text style={styles.textBody}>Masuk ke akun yang sudah ada</Text>
             <View style={{ marginTop: 20 }} />
             <Inputs 
