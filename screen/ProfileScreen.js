@@ -55,7 +55,7 @@ const ProfileScreen = (props) => {
                 ]}
               >
                 <Text style={[styles.text, { fontSize: 24 }]}>45,844</Text>
-                <Text style={[styles.text, styles.subText]}>Food Favorite</Text>
+                <Text style={[styles.text, styles.subText]}>Makanan Favorit</Text>
               </View>
             </View>
     
@@ -72,7 +72,7 @@ const ProfileScreen = (props) => {
                 ))}
               </ScrollView>
             </View>
-            <Text style={[styles.subText, styles.recent]}>Information</Text>
+            <Text style={[styles.subText, styles.recent]}>Informasi</Text>
             <View style={{ alignItems: "center" }}>
               <View style={styles.recentItem}>
                 <View style={styles.activityIndicator}></View>
@@ -80,7 +80,7 @@ const ProfileScreen = (props) => {
                   <Text
                     style={[styles.text, { color: "#41444B", fontWeight: "300" }]}
                   >
-                    Numbher Phone :
+                    Nomor Telepon :
                     <Text style={{ fontWeight: "400" }}>081234567890</Text>
                   </Text>
                 </View>

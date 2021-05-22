@@ -32,14 +32,14 @@ const LoginScreen = props =>{
               }}
             />
             <View style={{ flexDirection: "row", marginVertical: 5 }}>
-              <Text style={styles.textBody}>Don't Have an account? </Text>
+              <Text style={styles.textBody}>Belum Punya Akun? </Text>
               <Text
                 style={[styles.textBody, { color: "blue" }]}
                 onPress={() => 
                     props.navigation.navigate('SignUpScreen')    
                 }
               >
-                  Sign Up
+                  Daftar
               </Text>
             </View>
           </View>

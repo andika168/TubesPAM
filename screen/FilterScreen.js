@@ -62,7 +62,7 @@ const FilterScreen = (props) =>{
     
     return(
         <View style={styles.screen}>
-            <Text style={styles.title}>Food Category Filter</Text>
+            <Text style={styles.title}>Filter Kategori Makanan</Text>
                 {kategori.map(kategori =>(
                     <FilterSwitch
                     key={kategori.id}
